@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1b1035">
+<title>Untuk Kamu 🌸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true">
+  <div class="sun"></div>
+  <div class="stars" id="stars"></div>
+  <svg class="fuji" viewBox="0 0 800 260" preserveAspectRatio="xMidYMax slice">
+    <path d="M0 260V190Q120 150 230 188T430 170T620 190T800 168V260Z" fill="#8a4a98" opacity=".7"/>
+    <path d="M110 260L320 128Q380 84 400 78Q420 84 480 128L690 260Z" fill="#4f2a74"/>
+    <path d="M345 112Q372 92 400 78Q428 92 455 112L436 108L420 118L402 106L384 120L368 108Z" fill="#ffeaf3"/>
+    <path d="M0 260V222Q140 200 280 224T560 214T800 222V260Z" fill="#3a1f5d"/>
+  </svg>
+  <svg class="pagoda" viewBox="0 0 100 192" fill="#2e1850">
+    <defs><g id="pg"><path d="M0 40Q50 24 100 40L88 46H12Z"/><rect x="22" y="46" width="56" height="30"/></g></defs>
+    <rect x="48.5" y="0" width="3" height="46"/>
+    <use href="#pg" transform="translate(19 20) scale(.62)"/>
+    <use href="#pg" transform="translate(13 50) scale(.74)"/>
+    <use href="#pg" transform="translate(6 80) scale(.88)"/>
+    <use href="#pg" transform="translate(0 112)"/>
+  </svg>
+  <div class="tree tl" id="treeL"></div>
+  <div class="tree tr" id="treeR"></div>
+  <div class="mist"></div>
+  <svg class="garden" id="garden" viewBox="0 0 1000 170" preserveAspectRatio="xMidYMax slice"></svg>
+</div>
+<canvas id="fx"></canvas>
+
+<div id="intro" role="button" tabindex="0" aria-label="Masuk">
+  <div><svg class="hero" id="hb" viewBox="-70 -70 140 140"></svg><h1>Ada kejutan buat kamu</h1><p>sentuh layar untuk masuk 🌸</p></div>
+</div>
+
+<main id="deck">
+  <section class="slide active">
+    <div class="in">
+      <p class="jp reveal">大好きだよ</p>
+      <h1 class="reveal d1">Untuk <span id="nm">Sayang</span> 🌸</h1>
+      <p class="reveal d2">Kalau cerita cinta punya banyak musim,<br>aku ingin kamu ada di setiap episodenya.<br>Sentuh layar, ada kembang api untukmu.</p>
+      <p class="swhint reveal d2" id="swhint">geser ke kiri atau tekan tombol di bawah 💕</p>
+      <svg class="torii" viewBox="0 0 400 200" fill="#ff8db3" aria-hidden="true"><path d="M10 40q190 30 380 0l-10 24q-185 22-360 0z"/><rect x="40" y="74" width="320" height="14" rx="4"/><rect x="82" y="64" width="22" height="136"/><rect x="296" y="64" width="22" height="136"/><rect x="186" y="50" width="28" height="30"/></svg>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="in">
+      <h2 class="reveal">Di antara jutaan bintang,</h2>
+      <p class="reveal d1">kamu menjadi bintang yang paling terang.<br>Seperti komet yang lewat sekali dalam seumur hidup,<br>dan aku bersyukur sempat menatapnya.</p>
+      <div class="rose" aria-hidden="true">🌹</div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="in">
+      <h2 class="reveal">Kamu itu...</h2>
+      <p class="reveal d1">alasan jantungku berdebar<br>tiap namamu muncul di layar ponsel.</p>
+      <p class="reveal d2">Rumah paling hangat, tempat hatiku selalu ingin pulang.<br>Kalau semesta punya benang merah,<br>ujungnya pasti terikat pada kita.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="in wide">
+      <h2 class="reveal">Episode-episode kita</h2>
+      <p class="reveal d1">Setiap momen bersamamu adalah satu episode yang tak ingin kuakhiri. Sentuh tiap episode untuk membukanya.</p>
+      <div class="eps" id="eps"></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="in wide">
+      <h2 class="reveal">✉ Surat untukmu</h2>
+      <p class="reveal d1">Buka satu per satu, sesuai suasana hatimu.</p>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="in wide">
+      <h2 class="reveal">Potongan kisah kita</h2>
+      <div class="gallery" id="gallery"></div>
+      <p class="hint">Ketuk foto untuk memperbesar</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="in">
+      <h2 class="reveal">Satu pertanyaan penting…</h2>
+      <p class="reveal d1">Maukah kamu jadi pemeran utama di semua episodeku? 🥺</p>
+      <div class="ask reveal d2">
+        <button class="btn yes" id="yes">Mau selamanya 💗</button>
+        <button class="btn no" id="no">Enggak</button>
+      </div>
+      <p id="ans"></p>
+      <p class="foot">ずっと一緒にいようね 🌸<br><span id="from"></span></p>
+    </div>
+  </section>
+</main>
+
+<div id="tr" aria-hidden="true"></div>
+<div id="modal"><div class="letter" id="lt"><button class="x" id="cl" aria-label="Tutup">✕</button><h4 id="lh"></h4><p id="lp"></p><div class="sg" id="ls"></div></div></div>
+<div class="lightbox" id="lightbox"><img alt=""></div>
+<div class="toast" id="toast"></div>
+
+<nav class="dock" aria-label="Navigasi slide">
+  <div class="mid"><span class="cnt" id="cnt">1 / 7</span><div class="dots" id="dots"></div></div>
+  <button class="nb next" id="next" aria-label="Berikutnya"><span id="nt">Lanjut, sayang ♡</span></button>
+</nav>
+<button id="music" class="music" aria-label="Putar musik">♪</button>
+<audio id="bgm" loop src="koiro.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
